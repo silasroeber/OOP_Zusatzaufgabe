@@ -26,17 +26,21 @@ public class Element {
         this.next = next;
     }
 
-    public Element next() {
+    public Element getNext() {
         return this.next;
     }
 
-    public Element next(Element next) {
+    public Element setNext(Element next) {
         this.next = next;
         return this.next;
+    }
+    
+    public int getValue () {
+        return this.value;
     }
 
     /*@Override
     public String toString() {
-        return String.valueOf(this.value);
+        return this.value;
     }*/
 }
