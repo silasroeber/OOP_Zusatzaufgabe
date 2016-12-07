@@ -6,9 +6,9 @@ package zusatzaufgabe;
  * @author Eike Hoffmann <eike.s.hoffmann@student.fh-kiel.de>
  * @author Silas Röber <silas.roeber@student.fh-kiel.de>
  */
-public class Liste {
+public class Liste<T> {
 
-    private Element head = null;
+    private Element<T> head = null;
 
     public Liste() {
     }
@@ -17,9 +17,9 @@ public class Liste {
         this.head = head;
     }
 
-    public Liste(Liste liste) {
+    public Liste(Liste<T> liste) {
         // deep-copy der gesammten liste erzeugen
-        this.head = (liste.head() != null ? new Element(liste.head()) : null);
+        this.head = (liste.head() != null ? new Element<>(liste.head()) : null);
     }
 
     public static Liste concat(final Liste l1, final Liste l2) {
@@ -72,6 +72,18 @@ public class Liste {
             return new Liste(this.head.getNext());
         }
         return null;
+    }
+
+    public void append(T v) {
+        append(new Element<>(v, null));
+    }
+
+    private void append(Element<T> e) {
+        if(this.isEmpty()) {
+            this.head = e;
+        } else {
+            this.head().append(e);
+        }
     }
 
 }
