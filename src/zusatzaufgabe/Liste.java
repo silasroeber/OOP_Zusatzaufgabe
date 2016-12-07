@@ -13,7 +13,7 @@ public class Liste<T> {
     public Liste() {
     }
     
-    public Liste(final Element head) {
+    public Liste(final Element<T> head) {
         this.head = head;
     }
 
@@ -63,7 +63,7 @@ public class Liste<T> {
         return (this.head == null);
     }
 
-    public Element head() {
+    public Element<T> head() {
         return this.head;
     }
 

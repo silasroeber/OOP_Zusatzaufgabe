@@ -8,29 +8,29 @@ package zusatzaufgabe;
  */
 public class Element<T> {
 
-    private Element next = null;
+    private Element<T> next = null;
     private T value;
 
     public Element(Element<T> element) {
         this.value = element.value;
         // deep-copy von allen verketteten elementen erzeugen
-        this.next = (element.next != null ? new Element(element.next) : null);
+        this.next = (element.next != null ? new Element<>(element.next) : null);
     }
 
     public Element(T value) {
         this(value, null);
     }
 
-    public Element(T value, Element next) {
+    public Element(T value, Element<T> next) {
         this.value = value;
         this.next = next;
     }
 
-    public Element getNext() {
+    public Element<T> getNext() {
         return this.next;
     }
 
-    public Element setNext(Element next) {
+    public Element<T> setNext(Element next) {
         this.next = next;
         return this.next;
     }
