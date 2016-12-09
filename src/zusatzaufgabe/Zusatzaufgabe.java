@@ -26,12 +26,13 @@ public class Zusatzaufgabe {
         liste1.append(3);
         liste1.append(4);
         
-        Liste<Integer> liste2 = new Liste<>();
+        Liste<Double> liste2 = new Liste<>();
 
-        liste2.append(11);
-        liste2.append(12);
-        liste2.append(13);
-        liste2.append(14);
+        liste2.append(11.0);
+        liste2.append(12.2);
+        liste2.append(13.4);
+        liste2.append(14.6);
+        //liste2.append(15.8);
         
         Liste.print(liste1);
         System.out.println("-----------------------------");

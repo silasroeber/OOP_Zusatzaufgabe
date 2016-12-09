@@ -5,6 +5,7 @@ package zusatzaufgabe;
  *
  * @author Eike Hoffmann <eike.s.hoffmann@student.fh-kiel.de>
  * @author Silas Röber <silas.roeber@student.fh-kiel.de>
+ * @param <T>
  */
 public class Element<T> {
 

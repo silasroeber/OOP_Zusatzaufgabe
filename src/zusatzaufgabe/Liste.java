@@ -5,6 +5,7 @@ package zusatzaufgabe;
  *
  * @author Eike Hoffmann <eike.s.hoffmann@student.fh-kiel.de>
  * @author Silas Röber <silas.roeber@student.fh-kiel.de>
+ * @param <T>
  */
 public class Liste<T> {
 
@@ -53,7 +54,7 @@ public class Liste<T> {
     }
 
     public static Liste zip(final Liste l1, final Liste l2) {
-        if (l1.tail() != null && l2.tail()!= null){
+        if (l1.tail() != null && l2.tail()!= null){ //Funktioniert nur für gleich große Listen
             return new Liste(concat(new Element(l2.head.getValue()), concat(new Element(l1.head.getValue()), zip(l1.tail(), l2.tail()))));
         }
         return new Liste(concat(new Element(l2.head().getValue()), new Liste(new Element(l1.head.getValue()))));
@@ -67,7 +68,7 @@ public class Liste<T> {
         return this.head;
     }
 
-    public Liste tail() {
+    public Liste<T> tail() {
         if(this.head.getNext() != null) {
             return new Liste(this.head.getNext());
         }
