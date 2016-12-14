@@ -1,23 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package zusatzaufgabe;
 
 /**
+ * Zusatzaufgabe
  *
- * @author silasroeber
+ * @author Eike Hoffmann <eike.s.hoffmann@student.fh-kiel.de>
+ * @author Silas Röber <silas.roeber@student.fh-kiel.de>
  */
 public class Zusatzaufgabe {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-
-        //Liste liste1 = new Liste(new Element(1, new Element(2, new Element(3, new Element(4)))));
-        //Liste liste2 = new Liste(new Element(11, new Element(12, new Element(13, new Element(14)))));
 
         Liste<Integer> liste1 = new Liste<>();
 
