@@ -19,6 +19,7 @@ public class Zusatzaufgabe {
         liste1.append(4);
         
         Liste<Double> liste2 = new Liste<>();
+        //Warum müssen die Listen vom selben Typ sein? (Aufgabenstellung)
 
         liste2.append(11.0);
         liste2.append(12.2);
@@ -26,6 +27,7 @@ public class Zusatzaufgabe {
         liste2.append(14.6);
         //liste2.append(15.8);
         
+        //Reihenfolge an aufgabenstellung anpassen
         Liste.print(liste1);
         System.out.println("-----------------------------");
         Liste.print(liste2);
