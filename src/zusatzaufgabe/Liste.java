@@ -7,7 +7,7 @@ package zusatzaufgabe;
  * @author Silas Röber <silas.roeber@student.fh-kiel.de>
  * @param <T>
  */
-public class Liste<T> {
+public class Liste<T extends Comparable> {
 
     private Element<T> head = null;
 
@@ -54,11 +54,30 @@ public class Liste<T> {
     }
 
     public static Liste zip(final Liste l1, final Liste l2) {
-        if (l1.tail() != null && l2.tail()!= null){ //Funktioniert nur für gleich große Listen
-            return new Liste(concat(new Element(l2.head.getValue()), concat(new Element(l1.head.getValue()), zip(l1.tail(), l2.tail()))));
+        if(l1.tail() == null && l2.tail() == null){
+            return new Liste();
         }
-        return new Liste(concat(new Element(l2.head().getValue()), new Liste(new Element(l1.head.getValue()))));
-    }   // oder soll hier tatsächlich noch sortiert werden
+        else if(l1.tail() == null) {
+            return new Liste(l2);
+        }
+        else if(l2.tail() == null) {
+            return new Liste(l1);
+        }
+        
+        if ((l1.head().getValue().compareTo(l2.head().getValue())) < 0){
+                //l1.head ist kleiner
+            return concat(new Element(l1.head().getValue()), zip(l1.tail(), l2));
+        }
+        else if((l1.head().getValue().compareTo(l2.head().getValue())) > 0) {
+                //l1.head ist größer
+            return concat(new Element(l2.head().getValue()), zip(l1, l2.tail()));
+        }
+        else if((l1.head().getValue().compareTo(l2.head().getValue())) == 0) {
+                //l1.head==l2.head
+            return concat(new Element(l1.head().getValue()), zip(l1.tail(), l2.tail()));
+        }
+        return new Liste(); //wird nie erreicht        
+    }
 
     public boolean isEmpty() {
         return (this.head == null);

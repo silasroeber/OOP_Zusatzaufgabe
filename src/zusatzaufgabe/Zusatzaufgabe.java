@@ -14,27 +14,28 @@ public class Zusatzaufgabe {
         Liste<Integer> liste1 = new Liste<>();
 
         liste1.append(1);
-        liste1.append(2);
         liste1.append(3);
-        liste1.append(4);
+        liste1.append(5);
+        liste1.append(22);
+        //liste1.append(9);
         
-        Liste<Double> liste2 = new Liste<>();
+        Liste<Integer> liste2 = new Liste<>();
         //Warum müssen die Listen vom selben Typ sein? (Aufgabenstellung)
 
-        liste2.append(11.0);
-        liste2.append(12.2);
-        liste2.append(13.4);
-        liste2.append(14.6);
-        //liste2.append(15.8);
+        liste2.append(2);
+        liste2.append(4);
+        liste2.append(6);
+        liste2.append(8);
+        liste2.append(12);
         
         //Reihenfolge an aufgabenstellung anpassen
         Liste.print(liste1);
         System.out.println("-----------------------------");
         Liste.print(liste2);
         System.out.println("-----------------------------");
-        Liste.print(Liste.concat(liste1, liste2));
+        //Liste.print(Liste.concat(liste1, liste2));
         System.out.println("-----------------------------");
-        Liste.print(Liste.invert(Liste.concat(liste1, liste2)));
+        //Liste.print(Liste.invert(Liste.concat(liste1, liste2)));
         System.out.println("-----------------------------");
         Liste.print(Liste.zip(liste1, liste2));
         System.out.println("-----------------------------");

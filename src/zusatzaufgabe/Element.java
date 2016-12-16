@@ -7,7 +7,7 @@ package zusatzaufgabe;
  * @author Silas Röber <silas.roeber@student.fh-kiel.de>
  * @param <T>
  */
-public class Element<T> {
+public class Element<T extends Comparable> {
 
     private Element<T> next = null;
     private T value;
