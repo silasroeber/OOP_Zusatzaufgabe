@@ -39,8 +39,12 @@ public class Liste<T extends Comparable> {
 
     public static void print(final Liste l) {
         for(Element e = l.head(); e != null; e = e.getNext()) {
-            System.out.println(e.getValue());
+            System.out.print(e.getValue());
+            if(e.getNext() != null) {
+                System.out.print(", ");
+            }
         }
+        System.out.println();
     }
 
     public static Liste invert(final Liste l) {
