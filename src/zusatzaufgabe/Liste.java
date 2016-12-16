@@ -58,16 +58,16 @@ public class Liste<T extends Comparable> {
     }
 
     public static Liste zip(final Liste l1, final Liste l2) {
-        if(l1.tail() == null && l2.tail() == null){
+        if(l1 == null && l2 == null){
             return new Liste();
         }
-        else if(l1.tail() == null) {
+        else if(l1 == null) {
             return new Liste(l2);
         }
-        else if(l2.tail() == null) {
+        else if(l2 == null) {
             return new Liste(l1);
         }
-        
+
         if ((l1.head().getValue().compareTo(l2.head().getValue())) < 0){
                 //l1.head ist kleiner
             return concat(new Element(l1.head().getValue()), zip(l1.tail(), l2));
@@ -80,6 +80,7 @@ public class Liste<T extends Comparable> {
                 //l1.head==l2.head
             return concat(new Element(l1.head().getValue()), zip(l1.tail(), l2.tail()));
         }
+
         return new Liste(); //wird nie erreicht        
     }
 
