@@ -53,7 +53,6 @@ public class Liste<T extends Comparable> {
         }
         else {
             return new Liste(new Element(l.head().getValue()));
-            //Immer mit new Element da der Zeiger "gelöscht" werden muss
         }
     }
 
@@ -69,18 +68,17 @@ public class Liste<T extends Comparable> {
         }
 
         if ((l1.head().getValue().compareTo(l2.head().getValue())) < 0){
-                //l1.head ist kleiner
+                //l1.head < l2.head
             return concat(new Element(l1.head().getValue()), zip(l1.tail(), l2));
         }
         else if((l1.head().getValue().compareTo(l2.head().getValue())) > 0) {
-                //l1.head ist größer
+                //l1.head > l2.head
             return concat(new Element(l2.head().getValue()), zip(l1, l2.tail()));
         }
         else if((l1.head().getValue().compareTo(l2.head().getValue())) == 0) {
-                //l1.head==l2.head
+                //l1.head == l2.head
             return concat(new Element(l1.head().getValue()), zip(l1.tail(), l2.tail()));
         }
-
         return new Liste(); //wird nie erreicht        
     }
 

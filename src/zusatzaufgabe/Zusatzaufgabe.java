@@ -24,7 +24,7 @@ public class Zusatzaufgabe {
 
         liste2.append(2);
         liste2.append(4);
-        liste2.append(6);
+        liste2.append(5);
         liste2.append(8);
         liste2.append(12);
         
@@ -33,9 +33,9 @@ public class Zusatzaufgabe {
         System.out.println("-----------------------------");
         Liste.print(liste2);
         System.out.println("-----------------------------");
-        //Liste.print(Liste.concat(liste1, liste2));
+        Liste.print(Liste.concat(liste1, liste2));
         System.out.println("-----------------------------");
-        //Liste.print(Liste.invert(Liste.concat(liste1, liste2)));
+        Liste.print(Liste.invert(Liste.concat(liste1, liste2)));
         System.out.println("-----------------------------");
         Liste.print(Liste.zip(liste1, liste2));
         System.out.println("-----------------------------");
